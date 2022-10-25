@@ -1,33 +1,47 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import { Container } from './Counter.styled';
+import Controls from './Controls';
 
-export class Counter extends Component {
+class Counter extends Component {
+  static defaultProps = {
+    initialValue: 0,
+  };
+
+  static propTypes = {
+    //
+  };
+
   state = {
-    value: 0,
+    value: this.props.initialValue,
   };
 
   handleIncrement = () => {
     this.setState(prevState => {
-      return { value: prevState.value + 1 };
+      return {
+        value: prevState.value + 1,
+      };
     });
   };
-  
+
   handleDicrement = () => {
     this.setState(prevState => {
-      return { value: prevState.value - 1 };
+      return {
+        value: prevState.value - 1,
+      };
     });
   };
 
   render() {
     return (
-      <div>
+      <Container>
         <span>{this.state.value}</span>
-        <button type="button" onClick={this.handleIncrement}>
-          Increment by +1
-        </button>
-        <button type="button" onClick={this.handleDicrement}>
-          Decrement by +1
-        </button>
-      </div>
+        <Controls
+          OnIncrement={this.handleIncrement}
+          OnDicrement={this.handleDicrement}
+        />
+      </Container>
     );
   }
 }
+
+export default Counter;
