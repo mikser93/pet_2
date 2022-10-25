@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/pet_1/static/js/main.615a14a0.js",
-    "index.html": "/pet_1/index.html",
-    "main.615a14a0.js.map": "/pet_1/static/js/main.615a14a0.js.map"
+    "main.js": "/pet_2/static/js/main.615a14a0.js",
+    "index.html": "/pet_2/index.html",
+    "main.615a14a0.js.map": "/pet_2/static/js/main.615a14a0.js.map"
   },
   "entrypoints": [
     "static/js/main.615a14a0.js"
