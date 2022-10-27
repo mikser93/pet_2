@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 // import ColorPicker from "./components/ColorPicker";
 import TodoList from './components/ToDoList';
 import initialTodos from './todos.json';
+import Container from './components/Container';
+import Form from 'components/Form';
 
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
@@ -25,6 +27,10 @@ class App extends Component {
     }));
   };
 
+  formSubmitHandler = data => {
+    console.log(data);
+  }
+
   render() {
     const { todos } = this.state;
 
@@ -35,7 +41,8 @@ class App extends Component {
     );
 
     return (
-      <>
+      <Container>
+        <Form onSubmit={this.formSubmitHandler} />
         {/* <Counter initialValue={10}/> */}
         {/* <Dropdown/> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
@@ -44,7 +51,7 @@ class App extends Component {
           <p>Complited tasks:{completedTodoCount}</p>
         </div>
         <TodoList todos={todos} OnDeleteTodo={this.deleteTodo} />
-      </>
+      </Container>
     );
   }
 }
