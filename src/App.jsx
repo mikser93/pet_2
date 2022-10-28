@@ -5,7 +5,8 @@ import React, { Component } from 'react';
 import TodoList from './components/ToDoList';
 import initialTodos from './todos.json';
 import Container from './components/Container';
-import Form from 'components/Form';
+// import Form from 'components/Form';
+import { LoginForm } from 'components/LoginForm/LoginForm';
 
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
@@ -29,7 +30,7 @@ class App extends Component {
 
   formSubmitHandler = data => {
     console.log(data);
-  }
+  };
 
   render() {
     const { todos } = this.state;
@@ -42,7 +43,8 @@ class App extends Component {
 
     return (
       <Container>
-        <Form onSubmit={this.formSubmitHandler} />
+        {/* <Form onSubmit={this.formSubmitHandler} /> */}
+        <LoginForm />
         {/* <Counter initialValue={10}/> */}
         {/* <Dropdown/> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
